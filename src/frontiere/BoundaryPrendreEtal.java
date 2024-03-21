@@ -12,21 +12,21 @@ public class BoundaryPrendreEtal {
     }
 
     public void prendreEtal(String nomVendeur) {
-        System.out.println("Quel produit souhaitez-vous vendre ?");
+        System.out.println("Quel produit souhaitez-vous vendre ?\n");
         String produit = scan.nextLine();
-        System.out.println("Combien souhaitez-vous en vendre ?");
-        int nbProduit = scan.nextInt(); // Pour Ã©viter le problÃ¨me avec nextInt suivi de nextLine
-        scan.nextLine(); // Consomme la ligne de fin aprÃ¨s le nombre
+        System.out.println("Combien souhaitez-vous en vendre ?\n");
+        int nbProduit = scan.nextInt(); 
+        scan.nextLine();
 
         if (controlPrendreEtal.verifierIdentite(nomVendeur)) {
             int numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, produit, nbProduit);
             if (numeroEtal >= 0) {
-                System.out.println("Le vendeur " + nomVendeur + " s'est installÃ© Ã  l'Ã©tal nÂ°" + numeroEtal);
+                System.out.println("Le vendeur " + nomVendeur + " s'est installé à l'étal n°" + numeroEtal + "\n");
             } else {
-                System.out.println("Il n'y a plus d'Ã©tal disponible ou vous n'Ãªtes pas un habitant du village.");
+                System.out.println("Il n'y a plus d'étal disponible ou vous n'êtes pas un habitant du village.\n");
             }
         } else {
-            System.out.println("Je suis dÃ©solÃ©e " + nomVendeur + " mais il faut Ãªtre un habitant de notre village pour commercer ici.");
+            System.out.println("Je suis désolé " + nomVendeur + " mais il faut être un habitant de notre village pour commercer ici.\n");
         }
     }
 }

@@ -15,7 +15,7 @@ public class Clavier {
 				chiffre = scan.nextInt();
 				entreeCorrecte = true;
 			} catch (InputMismatchException e) {
-				System.out.println("Vous devez entrer un chiffre positif !");
+				System.out.println("Vous devez entrer un chiffre positif !\n");
 				scan.next();
 				entreeCorrecte = false;
 			}
@@ -32,7 +32,7 @@ public class Clavier {
 				chiffre = scan.nextDouble();
 				entreeCorrecte = true;
 			} catch (InputMismatchException e) {
-				System.out.println("Vous devez entrer un chiffre positif !");
+				System.out.println("Vous devez entrer un chiffre positif !\n");
 				scan.next();
 				entreeCorrecte = false;
 			}

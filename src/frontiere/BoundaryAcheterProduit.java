@@ -12,26 +12,26 @@ public class BoundaryAcheterProduit {
     }
 
     public void acheterProduit(String nomAcheteur) {
-        System.out.println("Quel produit voulez-vous acheter ?");
+        System.out.println("Quel produit voulez-vous acheter ?\n");
         String produit = scan.nextLine();
         String[] vendeurs = controlAcheterProduit.listerVendeursProduit(produit);
 
         if (vendeurs.length == 0) {
-            System.out.println("DÃ©solÃ©, personne ne vend ce produit au marchÃ©.");
+            System.out.println("Désolé, personne ne vend ce produit au marché.\n");
             return;
         }
 
-        System.out.println("Chez quel commerÃ§ant voulez-vous acheter des " + produit + " ?");
+        System.out.println("Chez quel commerçant voulez-vous acheter des " + produit + " ?\n");
         for (int i = 0; i < vendeurs.length; i++) {
             System.out.println((i + 1) + " - " + vendeurs[i]);
         }
 
-        int choixVendeur = scan.nextInt() - 1; // Ajustement pour l'indexation
-        scan.nextLine(); // Consommer la ligne aprÃ¨s le nombre
+        int choixVendeur = scan.nextInt() - 1;
+        scan.nextLine();
 
-        System.out.println("Combien de " + produit + " voulez-vous acheter ?");
+        System.out.println("Combien de " + produit + " voulez-vous acheter ?\n");
         int quantite = scan.nextInt();
-        scan.nextLine(); // Consommer la ligne aprÃ¨s le nombre
+        scan.nextLine();
 
         String resultat = controlAcheterProduit.acheterProduit(nomAcheteur, vendeurs[choixVendeur], produit, quantite);
         System.out.println(resultat);

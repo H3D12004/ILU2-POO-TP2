@@ -25,12 +25,12 @@ public class ControlAcheterProduit {
 
     public String acheterProduit(String nomAcheteur, String nomVendeur, String produit, int quantite) {
         if (!verifierIdentite(nomAcheteur)) {
-            return "Je suis dÃ©solÃ©e " + nomAcheteur + " mais il faut Ãªtre un habitant de notre village pour commercer ici.";
+            return "Je suis désolé " + nomAcheteur + " mais il faut être un habitant de notre village pour commercer ici.\n";
         }
         
         var etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
         if (etal == null || !etal.getProduit().equals(produit)) {
-            return "DÃ©solÃ©, personne ne vend ce produit au marchÃ©.";
+            return "Désolé, personne ne vend ce produit au marché.\n";
         }
         
         return etal.acheterProduit(quantite, nomAcheteur);

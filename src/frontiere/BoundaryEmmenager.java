@@ -13,9 +13,9 @@ public class BoundaryEmmenager {
 
     public void emmenager(String nomVisiteur) {
         if (controlEmmenager.isHabitant(nomVisiteur)) {
-            System.out.println("Mais vous Ãªtes dÃ©jÃ  un habitant du village !");
+            System.out.println("Mais vous êtes déjà un habitant du village !\n");
         } else {
-            System.out.println("ÃŠtes-vous :\n1 - un druide.\n2 - un gaulois.");
+            System.out.println("êtes-vous :\n1 - un druide.\n2 - un gaulois.\n");
             int choixUtilisateur = scan.nextInt();
             switch (choixUtilisateur) {
                 case 1:
@@ -25,29 +25,29 @@ public class BoundaryEmmenager {
                     emmenagerGaulois(nomVisiteur);
                     break;
                 default:
-                    System.out.println("Vous devez choisir le chiffre 1 ou 2 !");
+                    System.out.println("Vous devez choisir le chiffre 1 ou 2 !\n");
                     break;
             }
         }
     }
 
     private void emmenagerDruide(String nomVisiteur) {
-        System.out.println("Bienvenue druide " + nomVisiteur);
-        System.out.println("Quelle est votre force ?");
+        System.out.println("Bienvenue druide " + nomVisiteur + "\n");
+        System.out.println("Quelle est votre force ?\n");
         int force = scan.nextInt();
-        System.out.println("Quelle est la force de potion la plus faible que vous produisez ?");
+        System.out.println("Quelle est la force de potion la plus faible que vous produisez ?\n");
         int effetPotionMin = scan.nextInt();
-        System.out.println("Quelle est la force de potion la plus forte que vous produisez ?");
+        System.out.println("Quelle est la force de potion la plus forte que vous produisez ?\n");
         int effetPotionMax = scan.nextInt();
         controlEmmenager.ajouterDruide(nomVisiteur, force, effetPotionMin, effetPotionMax);
-        System.out.println("Le druide " + nomVisiteur + " a emmÃ©nagÃ© dans le village.");
+        System.out.println("Le druide " + nomVisiteur + " a emménagé dans le village.\n");
     }
 
     private void emmenagerGaulois(String nomVisiteur) {
-        System.out.println("Bienvenue villageois " + nomVisiteur);
-        System.out.println("Quelle est votre force ?");
+        System.out.println("Bienvenue villageois " + nomVisiteur + "\n");
+        System.out.println("Quelle est votre force ?\n");
         int force = scan.nextInt();
         controlEmmenager.ajouterGaulois(nomVisiteur, force);
-        System.out.println("Le gaulois " + nomVisiteur + " a emmÃ©nagÃ© dans le village.");
+        System.out.println("Le gaulois " + nomVisiteur + " a emménagé dans le village.\n");
     }
 }

@@ -13,21 +13,17 @@ public class BoundaryAfficherVillage {
 	public void afficherVillage() {
 		String nomVillage = controlAfficherVillage.donnerNomVillage();
 		String[] donneesVillage = controlAfficherVillage.donnerNomsVillageois();
-		System.out.println("Bienvenue dans " + nomVillage
-				+ " dirigÃ© par le chef " + donneesVillage[0] + ".");
-		System.out.println("Ce village possÃ¨de un joli marchÃ© avec "
-				+ controlAfficherVillage.donnerNbEtals()
-				+ " Ã©tals mis Ã  la disposition des villageois afin qu'ils puissent vendre leurs produits.");
+		System.out.println("Bienvenue dans " + nomVillage + " dirigé par le chef " + donneesVillage[0] + ".\n");
+		System.out.println("Ce village possède un joli marché avec " + controlAfficherVillage.donnerNbEtals() + "étals mis à la disposition des villageois afin qu'ils puissent vendre leurs produits. \n");
 		if (donneesVillage.length > 1) {
-			System.out.println("En plus du chef, il y a "
-					+ (donneesVillage.length - 1) + " habitants : ");
+			System.out.println("En plus du chef, il y a " + (donneesVillage.length - 1) + " habitants : ");
 			for (int i = 1; i < donneesVillage.length; i++) {
 				String gaulois = donneesVillage[i];
-				System.out.println("- " + gaulois);
+				System.out.println("- " + gaulois + "\n");
 			}
 		} else {
 			System.out.println(
-					"Pour l'instant, le chef est bien seul dans son village.");
+					"Pour l'instant, le chef est bien seul dans son village.\n");
 		}
 	}
 

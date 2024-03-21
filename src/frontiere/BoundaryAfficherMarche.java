@@ -10,7 +10,7 @@ public class BoundaryAfficherMarche {
     }
 
     public void afficherMarche() {
-        System.out.println("Vous trouverez au marchÃ© :");
+        System.out.println("Vous trouverez au marché :\n");
         System.out.println(controlAfficherMarche.afficherMarche());
     }
 }
