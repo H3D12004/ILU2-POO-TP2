@@ -37,7 +37,7 @@ public class Etal {
 		return this.produit.equals(produit);
 	}
 
-	public int acheterProduit(int quantiteAcheter) {
+	public int acheterProduit(int quantiteAcheter, String nomAcheteur) {
 		if (quantite == 0) {
 			quantiteAcheter = 0;
 		}

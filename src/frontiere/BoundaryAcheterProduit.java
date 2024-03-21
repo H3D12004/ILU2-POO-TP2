@@ -2,6 +2,7 @@ package frontiere;
 
 import java.util.Scanner;
 import controleur.ControlAcheterProduit;
+import personnages.Gaulois;
 
 public class BoundaryAcheterProduit {
     private Scanner scan = new Scanner(System.in);
@@ -14,7 +15,7 @@ public class BoundaryAcheterProduit {
     public void acheterProduit(String nomAcheteur) {
         System.out.println("Quel produit voulez-vous acheter ?\n");
         String produit = scan.nextLine();
-        String[] vendeurs = controlAcheterProduit.listerVendeursProduit(produit);
+        Gaulois[] vendeurs = controlAcheterProduit.listerVendeursProduit(produit);
 
         if (vendeurs.length == 0) {
             System.out.println("Désolé, personne ne vend ce produit au marché.\n");
@@ -33,7 +34,7 @@ public class BoundaryAcheterProduit {
         int quantite = scan.nextInt();
         scan.nextLine();
 
-        String resultat = controlAcheterProduit.acheterProduit(nomAcheteur, vendeurs[choixVendeur], produit, quantite);
+        int resultat = controlAcheterProduit.acheterProduit(nomAcheteur, vendeurs[choixVendeur], produit, quantite);
         System.out.println(resultat);
     }
 }

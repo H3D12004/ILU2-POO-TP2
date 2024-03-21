@@ -35,10 +35,10 @@ public class BoundaryLeVillage {
 			question.append("1 - un voyageur\n");
 			question.append("2 - un marchand\n");
 			question.append("3 - un client du marche\n");
-			question.append("4 - quitter l'application\n");
+			question.append("4 - quitter l'application");
 			choixUtilisateur = Clavier.entrerEntier(question.toString());
 			if (choixUtilisateur > 0 && choixUtilisateur < 4) {
-				System.out.println("Quel est votre nom ?\n");
+				System.out.println("Quel est votre nom ?");
 				String nom = scan.next();
 				switch (choixUtilisateur) {
 				case 1:
@@ -51,11 +51,11 @@ public class BoundaryLeVillage {
 					menuClient(nom);
 					break;
 				case 4:
-					System.out.println("Sortie de l'application\n");
+					System.out.println("Sortie de l'application");
 					break;
 				default:
 					System.out.println(
-							"Vous devez entrer un chiffre entre 1 et 4\n");
+							"Vous devez entrer un chiffre entre 1 et 4");
 					break;
 				}
 			}
@@ -66,9 +66,10 @@ public class BoundaryLeVillage {
 		int choixUtilisateur;
 		do {
 			StringBuilder question = new StringBuilder();
-			question.append("1 - je souhaite que vous me prÃ©sentiez votre village.\n");
-			question.append("2 - je voudrais emmÃ©nager dans votre village.\n");
-			question.append("3 - quitter l'application.\n");
+			question.append(
+					"1 - je souhaite que vous me présentiez votre village.\n");
+			question.append("2 - je voudrais emménager dans votre village.\n");
+			question.append("3 - quitter l'application.");
 			choixUtilisateur = Clavier.entrerEntier(question.toString());
 			switch (choixUtilisateur) {
 			case 1:
@@ -78,10 +79,10 @@ public class BoundaryLeVillage {
 				boundaryEmmenager.emmenager(nom);
 				break;
 			case 3:
-				System.out.println("Au revoir voyageur " + nom + "\n");
+				System.out.println("Au revoir voyageur " + nom);
 				break;
 			default:
-				System.out.println("Vous devez entrer un chiffre entre 1 et 3\n");
+				System.out.println("Vous devez entrer un chiffre entre 1 et 3");
 				break;
 			}
 			System.out.println();
@@ -94,7 +95,7 @@ public class BoundaryLeVillage {
 			StringBuilder question = new StringBuilder();
 			question.append("1 - je cherche un étal.\n");
 			question.append("2 - je veux libérer mon étal.\n");
-			question.append("3 - quitter l'application.\n");
+			question.append("3 - quitter l'application.");
 			choixUtilisateur = Clavier.entrerEntier(question.toString());
 			switch (choixUtilisateur) {
 			case 1:
@@ -104,10 +105,10 @@ public class BoundaryLeVillage {
 				boundaryLibererEtal.libererEtal(nom);
 				break;
 			case 3:
-				System.out.println("Au revoir marchand " + nom + "\n");
+				System.out.println("Au revoir marchand " + nom);
 				break;
 			default:
-				System.out.println("Vous devez entrer un chiffre entre 1 et 3\n");
+				System.out.println("Vous devez entrer un chiffre entre 1 et 3");
 				break;
 			}
 			System.out.println();
@@ -119,21 +120,22 @@ public class BoundaryLeVillage {
 		do {
 			StringBuilder question = new StringBuilder();
 			question.append("1 - je veux acheter un produit.\n");
-			question.append("2 - je veux avoir une vue d'ensemble du marché.\n");
-			question.append("3 - quitter l'application.\n");
+			question.append(
+					"2 - je veux avoir une vue d'ensemble du marché.\n");
+			question.append("3 - quitter l'application.");
 			choixUtilisateur = Clavier.entrerEntier(question.toString());
 			switch (choixUtilisateur) {
 			case 1:
 				boundaryAcheterProduit.acheterProduit(nom);
 				break;
 			case 2:
-				boundaryAfficherMarche.afficherMarche(nom);
+				boundaryAfficherMarche.afficherMarche();
 				break;
 			case 3:
-				System.out.println("Au revoir client " + nom + "\n");
+				System.out.println("Au revoir client " + nom);
 				break;
 			default:
-				System.out.println("Vous devez entrer un chiffre entre 1 et 3\n");
+				System.out.println("Vous devez entrer un chiffre entre 1 et 3");
 				break;
 			}
 			System.out.println();

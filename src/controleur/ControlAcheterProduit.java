@@ -1,6 +1,8 @@
 package controleur;
 
 import villagegaulois.Village;
+import personnages.Gaulois;
+import villagegaulois.Etal;
 
 public class ControlAcheterProduit {
     private Village village;
@@ -19,20 +21,23 @@ public class ControlAcheterProduit {
         return controlVerifierIdentite.verifierIdentite(nomAcheteur);
     }
 
-    public String[] listerVendeursProduit(String produit) {
+    public Gaulois[] listerVendeursProduit(String produit) {
         return village.rechercherVendeursProduit(produit);
     }
 
-    public String acheterProduit(String nomAcheteur, String nomVendeur, String produit, int quantite) {
-        if (!verifierIdentite(nomAcheteur)) {
-            return "Je suis désolé " + nomAcheteur + " mais il faut être un habitant de notre village pour commercer ici.\n";
+    public int acheterProduit(String nomAcheteur, String nomVendeur, int quantite) {
+        if (!controlVerifierIdentite.verifierIdentite(nomAcheteur)) {
+            System.out.println("Je suis désolée " + nomAcheteur + ", mais il faut être un habitant de notre village pour commercer ici.");
+            return 0;
         }
-        
-        var etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
-        if (etal == null || !etal.getProduit().equals(produit)) {
-            return "Désolé, personne ne vend ce produit au marché.\n";
+
+        Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+        if (etal == null) {
+            System.out.println("Désolé, " + nomVendeur + " ne vend pas de produits sur le marché actuellement.");
+            return 0;
         }
-        
-        return etal.acheterProduit(quantite, nomAcheteur);
+
+        int quantiteAchetee = etal.acheterProduit(quantite, nomVendeur);
+        return quantiteAchetee;
     }
 }
