@@ -32,22 +32,41 @@ public class BoundaryEmmenager {
     }
 
     private void emmenagerDruide(String nomVisiteur) {
-        System.out.println("Bienvenue druide " + nomVisiteur + "\n");
-        System.out.println("Quelle est votre force ?\n");
-        int force = scan.nextInt();
-        System.out.println("Quelle est la force de potion la plus faible que vous produisez ?\n");
-        int effetPotionMin = scan.nextInt();
-        System.out.println("Quelle est la force de potion la plus forte que vous produisez ?\n");
-        int effetPotionMax = scan.nextInt();
-        controlEmmenager.ajouterDruide(nomVisiteur, force, effetPotionMin, effetPotionMax);
+    	int force = -1;
+    	System.out.println("Bienvenue druide " + nomVisiteur + "\n");
+
+    	while (force < 0) {
+            System.out.println("Quelle est votre force ?\n");
+            force = scan.nextInt();
+			
+		}
+    	
+    	int effetPotionMin = 1;
+    	int effetPotionMax = 0;
+    			
+    	while (effetPotionMin > effetPotionMax) {
+    		System.out.println("Quelle est la force de potion la plus faible que vous produisez ?\n");
+            effetPotionMin = scan.nextInt();
+            System.out.println("Quelle est la force de potion la plus forte que vous produisez ?\n");
+            effetPotionMax = scan.nextInt();			
+		}
+    	
+    	controlEmmenager.ajouterDruide(nomVisiteur, force, effetPotionMin, effetPotionMax);
         System.out.println("Le druide " + nomVisiteur + " a emménagé dans le village.\n");
     }
 
     private void emmenagerGaulois(String nomVisiteur) {
-        System.out.println("Bienvenue villageois " + nomVisiteur + "\n");
-        System.out.println("Quelle est votre force ?\n");
-        int force = scan.nextInt();
-        controlEmmenager.ajouterGaulois(nomVisiteur, force);
+    	
+    	int force = -1;
+    	System.out.println("Bienvenue villageois " + nomVisiteur + "\n");
+
+    	while (force < 0) {
+    		System.out.println("Quelle est votre force ?\n");
+    		force = scan.nextInt();
+		}
+    	
+    	controlEmmenager.ajouterGaulois(nomVisiteur, force);
         System.out.println("Le gaulois " + nomVisiteur + " a emménagé dans le village.\n");
+
     }
 }

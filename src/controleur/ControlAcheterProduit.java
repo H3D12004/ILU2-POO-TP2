@@ -25,11 +25,7 @@ public class ControlAcheterProduit {
         return village.rechercherVendeursProduit(produit);
     }
 
-    public int acheterProduit(String nomAcheteur, String nomVendeur, int quantite) {
-        if (!controlVerifierIdentite.verifierIdentite(nomAcheteur)) {
-            System.out.println("Je suis désolée " + nomAcheteur + ", mais il faut être un habitant de notre village pour commercer ici.");
-            return 0;
-        }
+    public int acheterProduit(String nomVendeur, int quantite) {
 
         Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
         if (etal == null) {
