@@ -10,7 +10,8 @@ public class BoundaryAfficherMarche {
     }
 
     public void afficherMarche() {
-        System.out.println("Vous trouverez au march� :\n");
+        System.out.println("Vous trouverez au marché :\n");
+        // Directement imprimer la String formatée retournée par controlAfficherMarche.afficherMarche()
         System.out.println(controlAfficherMarche.afficherMarche());
     }
 }
